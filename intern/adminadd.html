@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Boxio" />
+    <meta name="description" content="blank" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/adminadd.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <link rel="icon" href="pictures/boxioicon.png" type="image/png" sizes="16x16">
+    <title>Add Teacher/Student</title>
+</head>
+<body>
+    <h1>Add Student/Teacher</h1>
+
+    <div class="content">
+        
+        <h3>Add Teacher</h3>
+        <form name="teacherForm" action="/app.js" onsubmit="return validateForm()" method="post">
+            Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="teacherName"> <br />
+            Password:&nbsp;&nbsp;&nbsp;<input type="password" id="teacherPass"> <br />
+            Admin:&nbsp;&nbsp;&nbsp;&nbsp;<select id="isAdmin">
+                <option value="true">True</option>
+                <option value="false" selected>False</option>
+            </select> <br />
+            <button id="teacherbtn" type="button" class="enterbtn" onclick="addteacher()">Submit</button>
+        </form>
+    </div>
+<div class="content">
+        <h3>Add Student</h3>
+        <form name="studentForm" action="/app.js" onsubmit="return validateForm()" method="post">
+            Name: &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="studentName"> <br />
+            ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input type="number" id="studentID" pattern=".{8}"> <br />
+            <button id="studentbtn" type="button" class="enterbtn" onclick="addstudent()">Submit</button>
+        </form>
+        
+    </div>
+    
+    <script>
+        // Web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDEQ5uWfzItrrAf9z6KwZM3YDv5UUgOt0s",
+            authDomain: "portfolio-2-boxio.firebaseapp.com",
+            databaseURL: "https://portfolio-2-boxio.firebaseio.com",
+            projectId: "portfolio-2-boxio",
+            storageBucket: "portfolio-2-boxio.appspot.com",
+            messagingSenderId: "186874167723",
+            appId: "1:186874167723:web:8af804c5e634f83b8692ee",
+            measurementId: "G-HPM59MD6Q7"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+    </script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
