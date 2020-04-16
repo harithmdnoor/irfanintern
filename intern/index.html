@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Boxio" />
+    <meta name="description" content="blank" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Login</title>
+    <link rel="icon" href="pictures/boxioicon.png" type="image/png" sizes="16x16">
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <h1 class="loginText">Login</h1>
+    <div class="content">
+        
+    <form class="loginform">
+        <fieldset class="loginfield">
+
+            <div class="question">
+                <input type="text" name="username" id="name" autocomplete="off"/>
+                <label>Username</label>
+              </div>
+
+
+              <div class="question">
+                <input type="password" name="password" id="pass"/>
+                <label>Password</label>
+
+
+
+            <!-- <a class="subname"></a> <input class="inputRcorner "type="text" name="username" id="name" placeholder="  Username" /><br />
+            <a class="subpass"></a><input class="inputRcorner type="password" name="password" id="pass" placeholder="  Password" /><br />
+            <br /> -->
+            <button id="loginbtn" type="button" class="enterbtn" onclick="verify()">Submit</button>
+        </div>
+            <!-- <button class="enterbtn" type="reset">Reset</button> -->
+        </fieldset>
+    </form>
+    </div>
+    <script>
+        // Web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDEQ5uWfzItrrAf9z6KwZM3YDv5UUgOt0s",
+            authDomain: "portfolio-2-boxio.firebaseapp.com",
+            databaseURL: "https://portfolio-2-boxio.firebaseio.com",
+            projectId: "portfolio-2-boxio",
+            storageBucket: "portfolio-2-boxio.appspot.com",
+            messagingSenderId: "186874167723",
+            appId: "1:186874167723:web:8af804c5e634f83b8692ee",
+            measurementId: "G-HPM59MD6Q7"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const dbl = firebase.firestore();
+    </script>
+    <script src="js/login.js"></script>
+</body>
+</html>
