@@ -106,29 +106,28 @@ a{
 .button {
     color: #000 !important;
     text-decoration: none;
-    background: #B6CDDB;
+    background: white;
     padding: 10px;
-    border: none;
+    border: 1px solid #d2d2d2;
     transition: all 0.4s ease 0s;
     font-size: 15px;
-    border-radius: 15px;
+    border-radius: 60px;
     margin: 10px;
     align-self:center;
 }
 
-.button:hover {
-        color: #fff !important ;
-        background: #7B96B4;
-        border-color: #7B96B4 !important;
-        transition: all 0.4s ease 0s;
+.button:hover,:focus {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
 }
 
 button {
     color: #000 !important;
     text-decoration: none;
-    background: #B6CDDB;
+    background: white;
     padding: 10px;
-    border: none;
+    border: 1px solid #d2d2d2;
     transition: all 0.4s ease 0s;
     font-size: 15px;
     border-radius: 15px;
@@ -137,17 +136,16 @@ button {
 }
 
 button:hover {
-        color: #fff !important ;
-        background: #7B96B4;
-        border-color: #7B96B4 !important;
-        transition: all 0.4s ease 0s;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
 }
 
 
 input[type="text"] {
     appearance: none;
     background-color: none;
-    border: 1px solid #000;
+    border: 1px solid #d2d2d2;
     line-height: 0;
     font-size: 17px;
     padding: 10px 15px;
@@ -160,13 +158,15 @@ input[type="text"] {
     align-self:center;
     margin-right: 20px;
   }
-input[type="text"]:focus {
+input[type="text"]:hover,:focus {
     outline: none;
-    background:#7B96B4 ;
-    color: white;
-    border: none;
+    background:white ;
+    color: black;
+    border: 1px solid #d2d2d2;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+}
 
-  }
 input[type="text"]:focus ~ label {
     -moz-transform: translate(0, -35px);
     -ms-transform: translate(0, -35px);

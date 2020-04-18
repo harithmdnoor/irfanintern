@@ -8,9 +8,17 @@
     <meta name="description" content="blank" />
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/student.css">
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
     <link rel="icon" href="pictures/boxioicon.png" type="image/png" sizes="16x16">
     <title>Student Response</title>
 </head>
@@ -31,15 +39,15 @@
     <script>
         // Web app's Firebase configuration
         var firebaseConfig = {
-            apiKey: "AIzaSyDEQ5uWfzItrrAf9z6KwZM3YDv5UUgOt0s",
-            authDomain: "portfolio-2-boxio.firebaseapp.com",
-            databaseURL: "https://portfolio-2-boxio.firebaseio.com",
-            projectId: "portfolio-2-boxio",
-            storageBucket: "portfolio-2-boxio.appspot.com",
-            messagingSenderId: "186874167723",
-            appId: "1:186874167723:web:8af804c5e634f83b8692ee",
-            measurementId: "G-HPM59MD6Q7"
-        };
+        apiKey: "AIzaSyDjSdsPac8LpvEXcpcZme0j83UVbxZdAvI",
+        authDomain: "cbe-intern-project.firebaseapp.com",
+        databaseURL: "https://cbe-intern-project.firebaseio.com",
+        projectId: "cbe-intern-project",
+        storageBucket: "cbe-intern-project.appspot.com",
+        messagingSenderId: "1074883147012",
+        appId: "1:1074883147012:web:1cd2b81da0b1d60f6b8c51",
+        measurementId: "G-0FRFPD82JK"
+    };
 
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);

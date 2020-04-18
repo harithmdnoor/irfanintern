@@ -1,5 +1,5 @@
 h1{
-    color: #fff;
+    color: white;
     font-size: 50px;
     letter-spacing: 2px;
     text-align: center;
@@ -41,17 +41,18 @@ img{
 
  
  
-  form .enterbtn {
+  form .login {
     margin-top: 35px;
+    margin-right: 25px;
     background-color: white;
-    border: 1px solid #000;
+    border: 1px solid #d2d2d2;
     line-height: 0;
     font-size: 17px;
     display: inline-block;
     box-sizing: border-box;
     padding: 20px 15px;
     border-radius: 60px;
-    color: black;
+    color: #4285F4;
     font-weight: 100;
     letter-spacing: 0.01em;
     position: relative;
@@ -59,10 +60,35 @@ img{
     box-shadow: none;
   }
 
-  form .enterbtn:hover, form .enterbtn:focus {
-    color: white;
-    background-color: #7B96B4;
-    border: none;
+  form .login:hover, form .enterbtn:focus {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+    outline: none;
+
+  }
+  form .signUp {
+    margin-top: 35px;
+    margin-left: 25px;
+    background-color: white;
+    border: 1px solid #d2d2d2;
+    line-height: 0;
+    font-size: 17px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    border-radius: 60px;
+    color: #4285F4;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+  }
+
+  form .signUp:hover, form .enterbtn:focus {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
   }
   form .question {
     position: relative;
@@ -76,7 +102,7 @@ img{
   }
   form .question label {
     transform-origin: left center;
-    color: #000;
+    color: #4285F4;
     font-weight: 700;
     letter-spacing: 0.01em;
     font-size: 20px;
@@ -92,7 +118,7 @@ img{
   form .question input[type="text"] {
     appearance: none;
     background-color: none;
-    border: 1px solid #000;
+    border: 1px solid #d2d2d2;
     line-height: 0;
     font-size: 17px;
     width: 100%;
@@ -107,12 +133,15 @@ img{
     z-index: 1;
   }
   form .question input[type="text"]:focus {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
     outline: none;
-    background:#7B96B4 ;
-    color: white;
-    margin-top: 30px;
-    border: none;
-
+  }
+  form .question input[type="text"]:hover {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+    outline: none;
+    
   }
   form .question input[type="text"]:focus ~ label {
     -moz-transform: translate(0, -35px);
@@ -136,7 +165,7 @@ img{
   form .question input[type="password"] {
     appearance: none;
     background-color: none;
-    border: 1px solid #000;
+    border: 1px solid #d2d2d2;
     line-height: 0;
     font-size: 17px;
     width: 100%;
@@ -151,11 +180,14 @@ img{
     z-index: 1;
   }
   form .question input[type="password"]:focus {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
     outline: none;
-    background: #7B96B4;
-    color: white;
-    margin-top: 30px;
-    border: none;
+  }
+  form .question input[type="password"]:hover {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+    outline: none;
   }
   form .question input[type="password"]:valid {
     margin-top: 30px;
