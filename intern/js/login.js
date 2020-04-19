@@ -29,6 +29,9 @@ function verify() {
         window.location.href = 'index.html';
     }
 }
+function signup(){
+    window.location.href("signup.html");
+}
 
 //getting student name and id
 dbl.collection('User').get().then(snapshot => {

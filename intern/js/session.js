@@ -7,17 +7,14 @@ function renderResponse(doc){
     let session_name = document.createElement('span');
     let session_click = document.createElement('BUTTON');
     let session_cross = document.createElement('div');
-    let session_stat = document.createElement('BUTTON');
 
     
     session_li.setAttribute('data-id',doc.id);
-    session_id.textContent = doc.data().SessionId;
     session_name.textContent = doc.data().SessionName;
     session_click.textContent = "Enter Session";
     session_cross.textContent = 'x';
 
 
-    session_li.appendChild(session_id);
     session_li.appendChild(session_name);
     session_li.appendChild(session_click);
     session_li.appendChild(session_cross);
@@ -29,8 +26,10 @@ function renderResponse(doc){
     session_click.addEventListener('click', (e) => {
         e.preventDefault();
         var data = doc.data();
-        var SessionName = data.SessionName;
-        localStorage.setItem("sessionID",SessionName);
+        var sessionName = data.SessionName;
+        var sessionId = doc.id;
+        localStorage.setItem("sessionId",sessionId);
+        localStorage.setItem("sessionName",sessionName);
         window.location.href = 'session-insight.html';
     })
 
@@ -82,11 +81,11 @@ function createSession(){
         window.alert("Failed to add");
         location.reload();
     }
-    
-    
-
+    newSession.value = "";
 }
-
+function clearTxt(){
+    document.getElementById("newSession").value = 'f';
+}
 
 // Real-time listener (Getting real-time data)
 db.collection('Session').onSnapshot(snapshot => {
