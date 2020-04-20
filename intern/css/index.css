@@ -21,6 +21,18 @@ img{
 .loginfield {
     border: none;
 }
+.backBtn {
+  color: #000 !important;
+  text-decoration: none;
+  background: white;
+  padding: 10px;
+  border: 1px solid #d2d2d2;
+  transition: all 0.4s ease 0s;
+  font-size: 15px;
+  border-radius: 60px;
+  margin: 10px;
+  align-self:center;
+}
 .transition, form button, form .question label, form .question input[type="text"] {
     -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
     -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);

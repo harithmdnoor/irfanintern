@@ -3,7 +3,6 @@ const form = document.querySelector('#add-response');
 function renderResponse(doc){
 
     let session_li = document.createElement('li');
-    let session_id =  document.createElement('span');
     let session_name = document.createElement('span');
     let session_click = document.createElement('BUTTON');
     let session_cross = document.createElement('div');
