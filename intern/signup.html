@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="blank" />
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
@@ -13,16 +14,35 @@
 </head>
 <body>
     <h1>Sign Up</h1>
-
     <div class="content">
-        
-        <form name="teacherForm"  onsubmit="return validateForm()" method="post">
-            Username: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="username"> <br />
-            Password:&nbsp;&nbsp;&nbsp;<input type="password" id="password"> <br />
-            Confirm Password:&nbsp;&nbsp;&nbsp;<input type="password" id="confimPassword"> <br />
-            <button id="signupBtn" type="button" class="enterbtn" onclick="signup()">Submit</button>
-        </form>
-    </div>
+
+
+    <form class="loginform">
+        <fieldset class="loginfield">
+
+            <div class="question">
+                <input type="text" name="username" id="name" autocomplete="off"/>
+                <label>Username</label>
+              </div>
+              <div class="question">
+                <input type="password" name="password" id="password"/>
+                <label>Password</label>
+              </div>
+              <div class="question">
+                <input type="password" name="password" id="confirmPassword"/>
+                <label>Confirm&nbspPassword</label>
+              </div>
+
+
+           
+            <button  type="button" class="login" onclick="signup()">Sign Up</button>
+            </div>
+
+            </fieldset>
+            </div>
+        </div>
+        </fieldset>
+    </form>
     <script>
         // Web app's Firebase configuration
         var firebaseConfig = {

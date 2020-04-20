@@ -30,7 +30,7 @@ function verify() {
     }
 }
 function signup(){
-    window.location.href("signup.html");
+    window.location.href= "signup.html";
 }
 
 //getting student name and id
