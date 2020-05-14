@@ -1,6 +1,5 @@
 // JavaScript source code
 var userNamelist = [];
-var user = [];
 var teachernamelist = [];
 var teacherpasswordlist = [];
 var teacheradminlist = [];
@@ -10,20 +9,16 @@ var counter = 0;
 function verify() {
     var name = document.getElementById('name').value;
     var password = document.getElementById('password').value;
-    userNamelist.forEach(doc => {
-        userNamelist.forEach(ids => {
-        if (name == doc) {
-                userNamelist.forEach(ids => {
-                    if (password == ids.toString()){
-                        window.location.href = 'session.html';
-                        var studentdata = [name, ids];
-                        localStorage.setItem('studentdata',studentdata);
-                        check = true;
-                    }
-                })
-            }
-        })
+    userNamelist.forEach(i=>{
+        if (i[1]==name && i[2]==password){
+            window.location.href = 'session.html';
+            var studentdata = [i[1], i[2]];
+            localStorage.setItem('studentdata',studentdata);
+            localStorage.setItem("userId",i[0]);
+            check = true;
+        }
     })
+    
     if(check == false){
         alert("Wrong username or Password");
         window.location.href = 'index.html';
@@ -40,11 +35,16 @@ dbl.collection('User').get().then(snapshot => {
     data.forEach(doc => {
         var userName = '';
         var userPassword = '';
+        var userId="";
+        var user = [];
         const guide = doc.data();
+        userId = doc.id;
         userName = guide.name;
         userPassword = guide.password;
-        userNamelist.push(userName);
-        userNamelist.push(userPassword);
+        user.push(userId);
+        user.push(userName);
+        user.push(userPassword);
+        userNamelist.push(user);
     })
 });
 

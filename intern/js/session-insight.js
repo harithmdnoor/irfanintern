@@ -3,6 +3,7 @@ const logList = document.querySelector('#log-list');
 var sessionID = localStorage.getItem("sessionId");
 var sessionName = localStorage.getItem("sessionName");
 var header = document.getElementById('header');
+var userid = localStorage.getItem('userId');
 header.textContent = sessionName;
 
 
@@ -41,7 +42,8 @@ function createLog(){
                 sessionID: sessionID.toString(),
                 sessionLog: newLog.toString(),
                 VideoLink: checkbox.checked.toString(),
-                DateTime: firebase.firestore.FieldValue.serverTimestamp()
+                DateTime: firebase.firestore.FieldValue.serverTimestamp(),
+                OwnerId: userid.toString()
             })
         }
     else {
