@@ -16,7 +16,7 @@ function renderResponse(doc){
         logValue = document.createElement('iframe');
         logValue.setAttribute('id',"ytplayer");
         logValue.setAttribute('type',"text/html");
-        logValue.setAttribute('width',"640");
+        logValue.setAttribute('width',"auto");
         logValue.setAttribute('height',"360");
         logValue.setAttribute('src',embeddedUrl);
     }
