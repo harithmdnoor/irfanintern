@@ -6,17 +6,20 @@ function renderResponse(doc){
     let session_name = document.createElement('span');
     let session_click = document.createElement('BUTTON');
     let session_cross = document.createElement('div');
+    let session_enter = document.createElement('BUTTON');
 
     
     session_li.setAttribute('data-id',doc.id);
     session_name.textContent = doc.data().SessionName;
-    session_click.textContent = "Enter Session";
+    session_click.textContent = "Add Content";
+    session_enter.textContent = "Enter Session";
     session_cross.textContent = 'x';
 
 
     session_li.appendChild(session_name);
     session_li.appendChild(session_click);
     session_li.appendChild(session_cross);
+    session_li.appendChild(session_enter);
 
 
     sessionList.appendChild(session_li);
@@ -30,6 +33,15 @@ function renderResponse(doc){
         localStorage.setItem("sessionId",sessionId);
         localStorage.setItem("sessionName",sessionName);
         window.location.href = 'session-insight.html';
+    })
+    session_enter.addEventListener('click', (e) => {
+        e.preventDefault();
+        var data = doc.data();
+        var sessionName = data.SessionName;
+        var sessionId = doc.id;
+        localStorage.setItem("sessionId",sessionId);
+        localStorage.setItem("sessionName",sessionName);
+        window.location.href = 'session-conduct.html';
     })
 
     session_cross.addEventListener('click', (e) => {
@@ -45,14 +57,11 @@ function logOut(){
 function createSession(){
     var newSession = document.getElementById("newSession").value;
     if (newSession !=""){
-        var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date+' '+time;
+        
         db.collection('Session').add(    
             {
                 SessionName: newSession.toString(),
-                TimeCreated: dateTime.toString()
+                DateTime: firebase.firestore.FieldValue.serverTimestamp()
 
             });
         }
@@ -67,7 +76,7 @@ function clearTxt(){
 }
 
 // Real-time listener (Getting real-time data)
-db.collection('Session').onSnapshot(snapshot => {
+db.collection('Session').orderBy("DateTime","asc").onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
       if(change.type == 'added'){

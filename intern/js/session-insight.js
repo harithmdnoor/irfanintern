@@ -8,18 +8,15 @@ header.textContent = sessionName;
 
 function renderResponse(doc){
     let session_li = document.createElement('li');
-    let logTime =  document.createElement('span');
     let logValue = document.createElement('span');
     let logCross = document.createElement('div');
 
     
     session_li.setAttribute('data-id',doc.id);
-    logTime.textContent = doc.data().sessionLog;
-    logValue.textContent = doc.data().TimeCreated;
+    logValue.textContent = doc.data().sessionLog;
     logCross.textContent = 'x';
 
     session_li.appendChild(logValue);
-    session_li.appendChild(logTime);
     session_li.appendChild(logCross);
 
 
@@ -35,29 +32,32 @@ function renderResponse(doc){
 }
 
 function createLog(){
+    var checkbox = document.getElementById("checkbox");
+    
     var newLog = document.getElementById("newLog").value;
     if (newLog !=""){
-        var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date+' '+time;
         db.collection('Session-insight').add(    
-            {
+            {                
+                sessionID: sessionID.toString(),
                 sessionLog: newLog.toString(),
-                TimeCreated: dateTime.toString(),
-                sessionID: sessionID.toString()
+                VideoLink: checkbox.checked.toString(),
+                DateTime: firebase.firestore.FieldValue.serverTimestamp()
             })
         }
     else {
         window.alert("Failed to add");
         location.reload();
     }
+    document.getElementById('newLog').value=" ";
+    checkbox.checked=false;
+
+    
 }
 
 
 
 // Real-time listener (Getting real-time data)
-db.collection('Session-insight').where("sessionID", "==", sessionID ).onSnapshot(snapshot => {
+db.collection('Session-insight').where("sessionID", "==", sessionID ).orderBy("DateTime","asc").onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
       if(change.type == 'added'){

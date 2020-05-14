@@ -61,7 +61,7 @@ li{
     color: black;
     position: relative;
     margin: 5px auto;
-    height: 46px;
+    height: auto;
     border-radius: 20px 20px 20px 20px;
 }
 
@@ -88,6 +88,7 @@ li span{
     
 }
 
+
 li span:nth-child(2){
     font-size: 22px;
     margin-top: 6px;
@@ -101,6 +102,17 @@ a{
     align-self: center;
     margin-right: 20px ;
     font-weight: bold;
+}
+.checkbox{
+    padding: 10px;
+    border: 1px solid #d2d2d2;
+    font-size: 15px;
+    align-self:center;
+}
+.checkboxLabel{
+    padding: 10px;
+    font-size: 10px;
+    align-self:center;
 }
 
 .button {
@@ -189,4 +201,5 @@ input[type="text"] {
     -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
     transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
   }
+  
   

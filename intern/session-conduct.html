@@ -17,16 +17,7 @@
       <div><button onclick="Goback()">Back</button></div>
       <h1 id="header"></h1>
       <div>
-         <form id="add-response">
-            <div class="content">
-               <a>Enter Steps</a>
-               <input type="text" id="newLog">
-                <input class="checkbox" id="checkbox"  type="checkbox">
-                <a class="checkboxLabel" for="checkbox"> Video Link?</a>
-               <input class="button" type="button" id="createFinding" value="Enter &#8594;" onclick="createLog()">
-            </div>
-            <ul id="log-list"></ul>
-         </form>
+        <ul id="log-list"></ul>
       </div>
       <script>
          // Web app's Firebase configuration
@@ -45,7 +36,7 @@
          firebase.initializeApp(firebaseConfig);
          const db = firebase.firestore();
       </script>        
-      <script src="js/session-insight.js"></script>
+      <script src="js/session-conduct.js"></script>
       <script>function Goback(){
          window.history.back()}
       </script>
